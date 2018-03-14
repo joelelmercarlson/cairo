@@ -1,0 +1,23 @@
+name:                generate-cairo
+version:             0.0.1.0
+synopsis:            cairo
+license:             MIT
+license-file:        LICENSE.md
+author:              Joel E Carlson
+maintainer:          "Joel E Carlson" <joel.elmer.carlson@gmail.com>
+category:            Web
+build-type:          Simple
+cabal-version:       >=1.10
+
+executable generate-cairo
+  hs-source-dirs: src
+  main-is:        Main.hs
+  build-depends:  base
+                  , cairo
+                  , colour
+                  , hsnoise
+                  , linear
+                  , MonadRandom
+                  , mtl
+                  , time
+  default-language: Haskell2010
