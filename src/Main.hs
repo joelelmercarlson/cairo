@@ -23,6 +23,8 @@ module Main where
   import qualified Numeric.Noise.Perlin as P
   import Text.Printf
 
+  import Colors
+
   data World = World
     {
     worldWidth    :: Int
@@ -49,6 +51,7 @@ module Main where
         , vividTangerine
         , englishVermillion
         , darkGunmetal
+        , brandOrange
         ]
       cairo $ do
         renderQuad quad
@@ -105,27 +108,6 @@ module Main where
       rectangle 0 0 w h
       color opacity *> fill
       
-  -- | hsva - human color
-  hsva :: Double -> Double -> Double -> Double -> Render ()
-  hsva h s v =  setSourceRGBA channelRed channelGreen channelBlue
-    where RGB{..} = hsv h s v
-
-  -- | color
-  eggshell :: Double -> Render ()
-  eggshell = hsva 71 0.13 0.96
-
-  darkGunmetal :: Double -> Render ()
-  darkGunmetal = hsva 170 0.30 0.16
-
-  teaGreen :: Double -> Render ()
-  teaGreen = hsva 81 0.25 0.94
-
-  vividTangerine :: Double -> Render ()
-  vividTangerine = hsva 11 0.40 0.92
-  
-  englishVermillion :: Double -> Render ()
-  englishVermillion = hsva 355 0.68 0.84
-
   -- A --- B
   -- |     |
   -- C --- D
