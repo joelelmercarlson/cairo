@@ -35,9 +35,9 @@
   -- | rgb2hsv from colorsys.rgb2hsv
   rgb2hsv :: Double -> Double -> Double -> IO ()
   rgb2hsv r g b = do
-    let r' = if r == rgbMax then 1.0 else (r `mod'` rgbMax) / rgbMax
-        g' = if g == rgbMax then 1.0 else (g `mod'` rgbMax) / rgbMax
-        b' = if b == rgbMax then 1.0 else (b `mod'` rgbMax) / rgbMax
+    let r' = if r == rgbMax then 1.0 else (r `mod'` rgbMax / rgbMax)
+        g' = if g == rgbMax then 1.0 else (g `mod'` rgbMax / rgbMax)
+        b' = if b == rgbMax then 1.0 else (b `mod'` rgbMax / rgbMax)
         max' = maximum [r', g', b']
         min' = minimum [r', g', b']
         d    = max' - min'

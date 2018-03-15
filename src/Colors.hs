@@ -36,43 +36,18 @@ module Colors ( hsva
   englishVermillion :: Double -> Render ()
   englishVermillion = hsva 355 0.68 0.84
 
+  -- 232, 119, 34
   brandOrange :: Double -> Render ()
-  brandOrange = hsva a b c
-    where (a,b,c) = hsvView RGB {channelRed = 232, channelGreen = 119, channelBlue = 34 }
+  brandOrange = hsva 25.76 85.34 90.98
 
+  -- 194, 86, 8
   accessibleOrange :: Double -> Render ()
-  accessibleOrange = hsva  a b c
-    where (a,b,c) = hsvView RGB {channelRed = 194, channelGreen = 86, channelBlue = 8 }
+  accessibleOrange = hsva 25.16 95.88 76.08
 
+  -- 242, 180, 17
   brandGold :: Double -> Render ()
-  brandGold = hsva a b c
-    where (a,b,c) = hsvView RGB {channelRed = 242, channelGreen = 180, channelBlue = 17 }
+  brandGold = hsva 43.47 92.98 94.90
 
-  gray1 :: Double -> Render ()
-  gray1 = hsva a b c
-    where (a,b,c) = hsvView RGB {channelRed = 40, channelGreen = 42, channelBlue = 46 }
-
-  gray2 :: Double -> Render ()
-  gray2 = hsva a b c
-    where (a,b,c) = hsvView RGB {channelRed = 67, channelGreen = 68, channelBlue = 72 }
-
-  gray3 :: Double -> Render ()
-  gray3 = hsva a b c
-    where (a,b,c) = hsvView RGB {channelRed = 99, channelGreen = 102, channelBlue = 106 }
-
+  -- 136, 139, 140
   gray4 :: Double -> Render ()
-  gray4 = hsva a b c
-    where (a,b,c) = hsvView RGB {channelRed = 136, channelGreen = 139, channelBlue = 140 }
-
-  gray5 :: Double -> Render ()
-  gray5 = hsva a b c
-    where (a,b,c) = hsvView RGB {channelRed = 177, channelGreen = 179, channelBlue = 179 }
-
-  gray6 :: Double -> Render ()
-  gray6 = hsva a b c
-    where (a,b,c) = hsvView RGB {channelRed = 208, channelGreen = 208, channelBlue = 206 }
-
-  gray7 :: Double -> Render ()
-  gray7 = hsva a b c
-    where (a,b,c) = hsvView RGB {channelRed = 239, channelGreen = 239, channelBlue = 238 }
-
+  gray4 = hsva 195 2.86 54.90

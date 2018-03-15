@@ -47,11 +47,15 @@ module Main where
     for_ noisyQuads $ \quad -> do
       strokeOrFill <- weighted [(fill, 0.4), (stroke, 0.6)]
       color <- uniform
-        [ teaGreen
-        , vividTangerine
-        , englishVermillion
-        , darkGunmetal
-        , brandOrange
+        [
+--      teaGreen
+--        , vividTangerine
+--        , englishVermillion
+--        , darkGunmetal
+         brandOrange
+         , accessibleOrange
+         , brandGold
+         , gray4
         ]
       cairo $ do
         renderQuad quad
@@ -63,16 +67,15 @@ module Main where
 
     seed <- round . (*1000) <$> getPOSIXTime
 
-    let stdGen   = mkStdGen seed
-        width    = 60 :: Int
-        height   = 60 :: Int
-        scaleAmt = 20 :: Double
+    let stdGen       = mkStdGen seed
+        width        = 60 :: Int
+        height       = 60 :: Int
+        scaleAmt     = 20 :: Double
         scaledWidth  = round $ fromIntegral width  * scaleAmt
         scaledHeight = round $ fromIntegral height * scaleAmt
+        world        = World width height seed scaleAmt
 
     surface <- createImageSurface FormatARGB32 scaledWidth scaledHeight
-
-    let world = World width height seed scaleAmt
 
     void
       . renderWith surface
@@ -82,11 +85,11 @@ module Main where
         cairo $ scale scaleAmt scaleAmt
         renderSketch
 
-    printf "Generating Art...\n"
+    printf "Seed=%s, Generating Art...\n" (show seed)
 
-    surfaceWriteToPNG surface
-      $ "images/seed/"
-      <> show seed <> "-" <> show (round scaleAmt :: Int) <> ".png"
+    --surfaceWriteToPNG surface
+    --  $ "images/seed/"
+    --  <> show seed <> "-" <> show (round scaleAmt :: Int) <> ".png"
     surfaceWriteToPNG surface "images/latest.png"
 
   -- | ---------------------------------------------------------------
@@ -94,7 +97,7 @@ module Main where
   cairo :: Render a -> Generate a
   cairo = lift . lift
 
-  -- | getSize 
+  -- | getSize
   getSize :: Num a => Generate (a,a)
   getSize = do
     (w, h) <- asks (worldWidth &&& worldHeight)
