@@ -5,8 +5,6 @@
   import System.Exit
   import System.IO
 
-  import Data.Fixed
-  import Data.Maybe
   import Text.Printf
 
   main :: IO ()
@@ -35,9 +33,9 @@
   -- | rgb2hsv from colorsys.rgb2hsv
   rgb2hsv :: Double -> Double -> Double -> IO ()
   rgb2hsv r g b = do
-    let r' = if r == rgbMax then 1.0 else (r `mod'` rgbMax / rgbMax)
-        g' = if g == rgbMax then 1.0 else (g `mod'` rgbMax / rgbMax)
-        b' = if b == rgbMax then 1.0 else (b `mod'` rgbMax / rgbMax)
+    let r' = if r == rgbMax then 1.0 else r / rgbMax
+        g' = if g == rgbMax then 1.0 else g / rgbMax
+        b' = if b == rgbMax then 1.0 else b / rgbMax
         max' = maximum [r', g', b']
         min' = minimum [r', g', b']
         d    = max' - min'
@@ -45,8 +43,8 @@
         s    = if max' == 0.0 then 0.0 else d / max'
         v    = max'
         hue        = (h / 6.0) * hueMax
-        saturation = s * svMax
-        value      = v * svMax
+        saturation = s
+        value      = v
     printf "R=%.2f G=%.2f B=%.2f is H=%.2f S=%.2f V=%.2f\n" r g b hue saturation value
 
   -- | h is set based on maximum [R, G, B]
@@ -54,7 +52,6 @@
   maxRGB (r, g, b, d, m) | r == m = (g - b) / d + (if g < b then 6.0 else 0.0)
                          | g == m = (b - r) / d + 2.0
                          | b == m = (r - g) / d + 4.0
-                         | otherwise = 0.0
 
   rgbMax :: Double
   rgbMax = 255.0

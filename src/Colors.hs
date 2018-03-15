@@ -38,16 +38,16 @@ module Colors ( hsva
 
   -- 232, 119, 34
   brandOrange :: Double -> Render ()
-  brandOrange = hsva 25.76 85.34 90.98
+  brandOrange = hsva 25 0.85 0.91
 
   -- 194, 86, 8
   accessibleOrange :: Double -> Render ()
-  accessibleOrange = hsva 25.16 95.88 76.08
+  accessibleOrange = hsva 25.16 0.96 0.76
 
   -- 242, 180, 17
   brandGold :: Double -> Render ()
-  brandGold = hsva 43.47 92.98 94.90
+  brandGold = hsva 43.47 0.93 0.95
 
   -- 136, 139, 140
   gray4 :: Double -> Render ()
-  gray4 = hsva 195 2.86 54.90
+  gray4 = hsva 195 0.03 0.55
