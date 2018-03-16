@@ -48,10 +48,6 @@ module Main where
       strokeOrFill <- weighted [(fill, 0.4), (stroke, 0.6)]
       color <- uniform
         [
---      teaGreen
---        , vividTangerine
---        , englishVermillion
---        , darkGunmetal
          brandOrange
          , accessibleOrange
          , brandGold

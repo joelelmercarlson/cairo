@@ -7,6 +7,7 @@
 
   import Text.Printf
 
+  -- | rgb2hsv - convert RGB into Hue, Saturation, Value
   main :: IO ()
   main = do
     xs <- getArgs
