@@ -1,5 +1,6 @@
 #!/usr/bin/env stack
 -- stack script --system-ghc --resolver lts-9.18 
+module Main where
 
   import System.Environment
   import System.Exit

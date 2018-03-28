@@ -1,12 +1,12 @@
 #!/usr/bin/env stack
 -- stack script --system-ghc --resolver lts-9.18 --package "process"
+module Main where
+  import System.Environment
+  import System.Exit
+  import System.IO
+  import System.Process 
 
-import System.Environment
-import System.Exit
-import System.IO
-import System.Process 
-
-main :: IO ()
-main = do
-  run <- callCommand "gm display images/latest.png"
-  putStrLn $ "run: " ++ show run
+  main :: IO ()
+  main = do
+    run <- callCommand "gm display images/latest.png"
+    putStrLn $ show run
