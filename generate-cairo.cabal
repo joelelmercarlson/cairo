@@ -19,7 +19,7 @@ library
   default-language:    Haskell2010
 
 
-executable generate-cairo
+executable Main
   hs-source-dirs: src
   main-is:        Main.hs
   other-modules:  Colors

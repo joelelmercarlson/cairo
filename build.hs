@@ -9,5 +9,5 @@ module Main where
   main :: IO ()
   main = do
     run <- callCommand "stack build"
-    run <- callCommand "stack exec generate-cairo"
+    run <- callCommand "stack exec Main"
     putStrLn $ show run

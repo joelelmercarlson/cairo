@@ -10,6 +10,6 @@ module Main where
   main :: IO ()
   main = do
     xs  <- getArgs
-    let cmd = "stack exec generate-cairo"
+    let cmd = "stack exec Main"
     run <- callCommand cmd
     putStrLn $ show run
