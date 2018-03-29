@@ -10,4 +10,4 @@ module Main where
   main = do
     run <- callCommand "stack build"
     run <- callCommand "stack exec Main"
-    putStrLn $ show run
+    print run

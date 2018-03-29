@@ -12,4 +12,4 @@ module Main where
     xs  <- getArgs
     let cmd = "stack exec Main"
     run <- callCommand cmd
-    putStrLn $ show run
+    print run
