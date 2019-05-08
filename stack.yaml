@@ -1,5 +1,8 @@
-resolver: lts-12.22
+resolver: lts-13.15
 packages: ['.']
-extra-deps: [ hsnoise-0.0.2 ]
 flags: {}
 extra-package-dbs: []
+extra-deps: 
+ - cairo-0.13.6.0
+ - gtk2hs-buildtools-0.13.5.0
+ - hsnoise-0.0.2 

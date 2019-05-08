@@ -1,26 +1,24 @@
 CWD     := $(shell pwd)
-RANDOMPATH := $(CWD)
+ORGPATH := $(CWD)
 STACK   := stack
 BUILD   := $(STACK) build
-COMMIT  := $(RANDOMPATH)/commit.hs
-RANDOM  := $(STACK) exec Main
+COMMIT  := $(ORGPATH)/commit.hs
+RUN     := $(STACK) exec Main
+RPMS    := cairo-devel
+YUM     := sudo dnf 
 
 GIT       := git
 GITDIFF   := $(GIT) diff
 GITLOG    := $(GIT) log
 GITSTATUS := $(GIT) status
 GITPULL   := $(GIT) pull
+GITPUSH   := $(GIT) push
 
 build:
 	$(BUILD)
-	$(RANDOM)
 
 commit:
 	$(COMMIT)
-
-random:
-	$(BUILD)
-	$(RANDOM)
 
 diff:
 	$(GITDIFF)
@@ -28,11 +26,20 @@ diff:
 log:
 	$(GITLOG)
 
+monkey:
+	$(RUN) json/monkey.json
+
 pull:
 	$(GITPULL)
 
+push:
+	$(GITPUSH)
+
+rhel:
+	$(YUM) install -y $(RPMS)
+
 run:
-	@echo "stack and haskell is used with random"
+	$(RUN)
 
 status:
 	$(GITSTATUS)
